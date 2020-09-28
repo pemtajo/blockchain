@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  core:
+  back:
     build: back
     image: blockchain-core
     container_name: dev-blockchain-core
@@ -12,5 +12,21 @@ services:
       - back/docker/.env.template
     volumes:
       - ./back/:/blockchain
+  front:
+    build: front
+    container_name: dev-blockchain-front
+    stdin_open: true
+    tty: true
+    depends_on:
+      - back
+    networks:
+      - blockchain
+    ports:
+      - "3000:3000"
+    env_file:
+      - front/docker/.env.template
+    volumes:
+      - ./front/public:/front/public
+      - ./front/src:/front/src
 networks:
   blockchain:

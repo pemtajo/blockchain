@@ -1,0 +1,8 @@
+FROM node:alpine
+
+WORKDIR /front
+COPY . .
+
+RUN npm install
+
+CMD npm run start
