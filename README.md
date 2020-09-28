@@ -8,6 +8,7 @@ docker-compose up
 `
 
 API is running in the 7777 port
+
 The front is running in 3000 port
 
 http://localhost:3000
