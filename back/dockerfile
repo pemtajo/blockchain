@@ -1,0 +1,8 @@
+FROM python:alpine
+
+RUN pip3 install flask flask-mongoengine pyjwt flask_cors flask_swagger_ui
+
+WORKDIR /blockchain
+COPY . .
+
+CMD python3 -u app.py

@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  core:
+    build: back
+    image: blockchain-core
+    container_name: dev-blockchain-core
+    networks:
+      - blockchain
+    ports:
+      - "7777:7777"
+    env_file:
+      - back/docker/.env.template
+    volumes:
+      - ./back/:/blockchain
+networks:
+  blockchain:
