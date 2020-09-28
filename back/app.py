@@ -36,7 +36,7 @@ def addBlock():
 
 @app.route("/blocks", methods=["GET"])
 def getAllBlocks():
-    return jsonify(blockchain.printBlockChain())
+    return jsonify(blockchain.returnAllBlocks())
 
 
 if __name__ == "__main__":

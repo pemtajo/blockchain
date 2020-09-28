@@ -62,7 +62,7 @@ class BlockChain:
                 return False
         return True
 
-    def printBlockChain(self):
+    def returnAllBlocks(self):
         return [b.printBlock() for b in self.chain]
 
     def save(self):
